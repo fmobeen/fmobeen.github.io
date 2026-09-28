@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Faria Mobeen | Software Engineer</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&family=JetBrains+Mono:wght@400;600&display=swap">
+<style>
+:root{--bg:#0A0F1E;--surf:#111834;--surf2:#161F42;--ink:#E8EEFF;--muted:#8E9ABB;--rule:#232E57;--teal:#2DF5D2;--indigo:#7C89FF;--on:#04121A;
+--sans:"Sora","Helvetica Neue",Arial,sans-serif;--mono:"JetBrains Mono",ui-monospace,Menlo,Consolas,monospace;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:light){:root:not([data-theme="dark"]){--bg:#F4F6FF;--surf:#FFFFFF;--surf2:#EDF0FF;--ink:#121A3A;--muted:#55628A;--rule:#D5DBF3;--teal:#007F6B;--indigo:#3F4FD8;--on:#FFFFFF}}
+:root[data-theme="light"]{--bg:#F4F6FF;--surf:#FFFFFF;--surf2:#EDF0FF;--ink:#121A3A;--muted:#55628A;--rule:#D5DBF3;--teal:#007F6B;--indigo:#3F4FD8;--on:#FFFFFF}
+html{scroll-behavior:smooth;scroll-padding-top:calc(env(safe-area-inset-top,0px) + 4rem)}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1rem/1.65 var(--sans)}
+a{color:var(--teal)}
+:focus-visible{outline:3px solid var(--teal);outline-offset:3px;border-radius:4px}
+.w{max-width:66rem;margin:0 auto;padding:0 1.5rem}
+h1,h2,h3{font-weight:700;letter-spacing:-.02em;margin:0}
+nav.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--rule)}
+nav.top .w{display:flex;justify-content:space-between;align-items:center;gap:1rem;height:3.5rem}
+nav.top b{font-weight:700}
+nav.top div{display:flex;gap:1.2rem;font-size:.9rem}
+nav.top a{color:var(--muted);text-decoration:none}nav.top a:hover{color:var(--ink)}
+.hero{display:grid;grid-template-columns:1.1fr .9fr;gap:2.5rem;align-items:center;padding:4.5rem 0 3.5rem}
+.hero h1{font-size:clamp(2.2rem,5.4vw,3.8rem);line-height:1.05;margin-bottom:1.2rem}
+.hero h1 em{font-style:normal;background:linear-gradient(90deg,var(--teal),var(--indigo));-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p{color:var(--muted);max-width:34rem;margin:0 0 1.6rem}
+.badges{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:1.6rem}
+.badges span{border:1px solid var(--rule);background:var(--surf);border-radius:99px;padding:.3rem .8rem;font-size:.82rem}
+.btns{display:flex;gap:.7rem;flex-wrap:wrap}
+.btn{font:600 .95rem var(--sans);padding:.75rem 1.3rem;border-radius:8px;border:1.5px solid var(--teal);color:var(--teal);background:none;text-decoration:none;cursor:pointer}
+.btn.p{background:var(--teal);color:var(--on);box-shadow:0 0 24px color-mix(in srgb,var(--teal) 35%,transparent)}
+.term{background:var(--surf);border:1px solid var(--rule);border-radius:12px;box-shadow:0 0 60px color-mix(in srgb,var(--indigo) 22%,transparent);overflow:hidden;font:400 .84rem/1.7 var(--mono)}
+.term header{display:flex;gap:.4rem;padding:.7rem 1rem;border-bottom:1px solid var(--rule);background:var(--surf2)}
+.term header i{width:.65rem;height:.65rem;border-radius:50%;background:var(--rule)}
+.term pre{margin:0;padding:1rem 1.1rem;white-space:pre-wrap;overflow-wrap:anywhere}
+.term .l{display:block;opacity:0;animation:in .01s forwards;animation-delay:calc(var(--i)*.55s)}
+.term .c{color:var(--teal)}.term .o{color:var(--muted)}.term .g{color:var(--indigo)}
+@keyframes in{to{opacity:1}}
+@media (prefers-reduced-motion:reduce){.term .l{animation:none;opacity:1}html{scroll-behavior:auto}}
+.metrics{border-block:1px solid var(--rule);background:var(--surf)}
+.metrics .w{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;padding-block:2rem}
+.metrics b{display:block;font-size:2.2rem;line-height:1.1;color:var(--teal);font-variant-numeric:tabular-nums}
+.metrics span{color:var(--muted);font-size:.88rem}
+section{padding:4rem 0}
+section h2{font-size:1.9rem;margin-bottom:.4rem}
+section .sub{color:var(--muted);margin:0 0 1.8rem}
+[role=tablist]{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:1.4rem}
+[role=tab]{font:600 .88rem var(--sans);color:var(--muted);background:var(--surf);border:1px solid var(--rule);border-radius:8px;padding:.55rem 1rem;cursor:pointer}
+[role=tab][aria-selected=true]{color:var(--on);background:var(--indigo);border-color:var(--indigo)}
+.panel{background:var(--surf);border:1px solid var(--rule);border-radius:12px;padding:1.5rem}
+.chips{display:flex;flex-wrap:wrap;gap:.5rem}
+.chip{font:400 .82rem var(--mono);background:var(--surf2);border:1px solid var(--rule);border-radius:6px;padding:.3rem .65rem}
+.role h3{font-size:1.25rem}.role .m{color:var(--muted);font-size:.9rem;margin:.2rem 0 1rem}
+.item{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;padding:1rem 0;border-top:1px solid var(--rule)}
+.item small{display:block;color:var(--indigo);font-weight:600;font-size:.8rem;margin-bottom:.15rem}
+.item p{margin:0;font-size:.93rem}.item .r{color:var(--teal);font-weight:600}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem}
+.card{text-align:left;font:inherit;color:inherit;background:var(--surf);border:1px solid var(--rule);border-radius:12px;padding:1.4rem;cursor:pointer;display:flex;flex-direction:column;gap:.8rem;transition:border-color .2s,transform .2s}
+.card:hover{border-color:var(--teal);transform:translateY(-3px)}
+.card h3{font-size:1.1rem}.card ul{margin:0;padding-left:1.1rem;color:var(--muted);font-size:.9rem}
+.card .more{margin-top:auto;color:var(--teal);font-weight:600;font-size:.88rem}
+dialog{background:var(--surf);color:var(--ink);border:1px solid var(--teal);border-radius:14px;max-width:38rem;width:calc(100% - 2rem);padding:1.6rem}
+dialog::backdrop{background:rgba(3,6,18,.72)}
+dialog h3{font-size:1.3rem;margin-bottom:.6rem}dialog p{color:var(--muted);margin:.4rem 0 1rem}
+.flow{display:flex;flex-wrap:wrap;align-items:center;gap:.4rem;margin:.6rem 0 1.2rem}.flow .a{color:var(--teal)}
+.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem}
+.honor{background:var(--surf);border:1px solid var(--rule);border-radius:12px;padding:1.2rem;font-size:.93rem}
+.honor b{display:block;margin-bottom:.2rem}
+footer{padding:4rem 0 5rem;text-align:center;border-top:1px solid var(--rule);background:linear-gradient(180deg,var(--bg),var(--surf))}
+footer h2{font-size:clamp(1.6rem,4vw,2.4rem);max-width:24ch;margin:0 auto 1rem}
+footer .btns{justify-content:center;margin-top:1.4rem}
+#toast{min-height:1.5rem;color:var(--teal);font-size:.9rem;margin-top:.8rem}
+@media (max-width:52rem){.hero{grid-template-columns:1fr;padding-top:2.5rem}.metrics .w{grid-template-columns:repeat(2,1fr)}.cards,.grid4{grid-template-columns:1fr 1fr}.item{grid-template-columns:1fr;gap:.6rem}}
+@media (max-width:36rem){.cards,.grid4{grid-template-columns:1fr}nav.top div a:nth-child(n+3){display:none}}
+</style>
+</head>
+<body>
+<nav class="top"><div class="w"><b>Faria Mobeen</b><div><a href="#projects">Projects</a><a href="#experience">Experience</a><a href="#skills">Skills</a><a href="#contact">Contact</a></div></div></nav>
+
+<main>
+<div class="w hero" id="top">
+  <div>
+    <div class="badges"><span>🏆 Gold Medalist Capstone</span><span>⚡ 96% Performance Boost</span><span>☁️ Cloud &amp; Microservices</span></div>
+    <h1>Backend and cloud engineer who <em>ships zero-downtime migrations</em> and faster systems.</h1>
+    <p>Junior Software Engineer at Bell. I build with Java/Spring Boot, .NET and React on AWS and GCP, and automate the DevOps pipelines around them.</p>
+    <div class="btns"><a class="btn p" href="#projects">View Projects</a><a class="btn" href="#contact">Contact Me</a></div>
+  </div>
+  <div class="term" aria-label="Terminal showing three results from my work">
+    <header><i></i><i></i><i></i></header>
+    <pre><span class="l" style="--i:0"><span class="c">$</span> deploy --strategy zero-downtime</span><span class="l o" style="--i:1">  openshift to gke: dev, uat, prod ok</span><span class="l" style="--i:2"><span class="c">$</span> profile voltex.dashboard</span><span class="l g" style="--i:3">  query time 73s to 3s  (-96%)</span><span class="l" style="--i:4"><span class="c">$</span> audit datadog --unused</span><span class="l g" style="--i:5">  retired 10 orgs, saved $20,000/yr</span><span class="l" style="--i:6"><span class="c">$</span> _</span></pre>
+  </div>
+</div>
+
+<div class="metrics"><div class="w">
+  <div><b data-to="96" data-suf="%">96%</b><span>Drop in processing time, Voltex Solutions</span></div>
+  <div><b data-to="20000" data-pre="$">$20,000</b><span>Saved annually on monitoring, Symend</span></div>
+  <div><b data-to="18" data-suf="K/day">18K/day</b><span>Unauthorized legacy traffic eliminated with zero downtime, Bell</span></div>
+  <div><b data-to="97" data-pre="$">$97</b><span>Working prototype, undercutting $1,000 competitors</span></div>
+</div></div>
+
+<section id="projects"><div class="w">
+  <h2>Featured projects</h2><p class="sub">Select a project to see how it fits together.</p>
+  <div class="cards" id="cards"></div>
+</div></section>
+
+<section id="experience" style="background:var(--surf)"><div class="w">
+  <h2>Experience</h2><p class="sub">Each result, framed as problem, solution and measurable outcome.</p>
+  <div role="tablist" aria-label="Roles" id="roleTabs"></div>
+  <div class="panel role" id="rolePanel" role="tabpanel" tabindex="0"></div>
+</div></section>
+
+<section id="skills"><div class="w">
+  <h2>Skills</h2><p class="sub">Grouped by the kind of work they do.</p>
+  <div role="tablist" aria-label="Skill groups" id="skillTabs"></div>
+  <div class="panel" id="skillPanel" role="tabpanel" tabindex="0"></div>
+</div></section>
+
+<section style="background:var(--surf)"><div class="w">
+  <h2>Honors and education</h2><p class="sub">&nbsp;</p>
+  <div class="grid4">
+    <div class="honor"><b>Gold Medal</b>Software Engineering Capstone</div>
+    <div class="honor"><b>Rhodes Scholarship nominee</b>Also a Scholars Academy nominee</div>
+    <div class="honor"><b>Hackathon Award</b>Best Use of APIs/Datasets. Dean's List and Jason Lang Scholarship.</div>
+    <div class="honor"><b>B.Sc. Software Engineering</b>University of Calgary</div>
+  </div>
+</div></section>
+</main>
+
+<footer id="contact"><div class="w">
+  <h2>Let's build scalable, reliable software together.</h2>
+  <div class="btns">
+    <button class="btn p" data-copy="fariamobeen124@gmail.com">Copy email</button>
+    <a class="btn" href="mailto:fariamobeen124@gmail.com">Open mail app</a>
+    <a class="btn" href="https://linkedin.com/in/faria-mobeen" rel="noopener">LinkedIn</a>
+    <a class="btn" href="https://github.com/FariaMobeen" rel="noopener">GitHub</a>
+  </div>
+  <div id="toast" role="status"></div>
+</div></footer>
+
+<dialog id="dlg" aria-labelledby="dt"><h3 id="dt"></h3><p id="dp"></p><div class="flow" id="df"></div><div class="chips" id="dc"></div><div class="btns" style="margin-top:1.4rem"><button class="btn" id="dx">Close</button></div></dialog>
+
+<script>
+const $=s=>document.querySelector(s);
+const projects=[
+{n:"Smart Hydroponic System",t:["React Native","AWS IoT","GraphQL"],h:["Gold Medal at the 2025 Engineering Design Fair","$97 prototype against a $3,000 budget","Millisecond actuator response over MQTT, under 5% packet loss"],p:"Custom PCB, React Native app and AWS backend for real-time monitoring and device control. It undercut $1,000 competitor products.",f:["Custom PCB","MQTT","AWS IoT Core","Lambda","AppSync (GraphQL)","DynamoDB","React Native app"]},
+{n:"AI Story Generator",t:["React","AWS Lambda","Terraform","OpenAI"],h:["30% faster response time","User input routed as prompts to the OpenAI API","25% faster deployment via Terraform"],p:"A story-generation web app that turns user input into prompts for the OpenAI API, with the backend provisioned as code.",f:["ReactJS","AWS Lambda","OpenAI API","DynamoDB","Terraform"]},
+{n:"EventBlitz",t:["Java","Spring Boot","React","Cloud SQL"],h:["Led full-stack development end to end","MVC and microservices design, 95% implementation accuracy","90% test coverage with TDD"],p:"An event management web app designed around MVC and microservices, built test-first with JUnit and Jest.",f:["ReactJS","Spring Boot (Java)","Google Cloud SQL","JUnit + Jest tests"]}];
+$("#cards").innerHTML=projects.map((x,i)=>`<button class="card" data-i="${i}"><h3>${x.n}</h3><div class="chips">${x.t.map(t=>`<span class="chip">${t}</span>`).join("")}</div><ul>${x.h.map(h=>`<li>${h}</li>`).join("")}</ul><span class="more">View architecture</span></button>`).join("");
+document.querySelectorAll(".card").forEach(b=>b.onclick=()=>{const x=projects[b.dataset.i];$("#dt").textContent=x.n;$("#dp").textContent=x.p;$("#df").innerHTML=x.f.map(s=>`<span class="chip">${s}</span>`).join('<span class="a">&gt;</span>');$("#dc").innerHTML=x.t.map(t=>`<span class="chip">${t}</span>`).join("");$("#dlg").showModal()});
+$("#dx").onclick=()=>$("#dlg").close();
+$("#dlg").addEventListener("click",e=>{if(e.target.id==="dlg")e.target.close()});
+
+const roles=[
+{k:"Bell",t:"Junior Software Engineer",m:"Bell, Oct 2025 – Present",g:["Dynatrace","GKE","OpenShift","Docker","GitLab CI/CD","Java Spring","ELK"],i:[
+["Unauthorized legacy API traffic hitting production.","Traced requests in Dynatrace across 3 servers and decommissioned the exposed credential.","18K/day eliminated, zero downtime."],
+["A network-whitelisting defect blocked a third-party REST API during a cloud move.","Migrated Java microservices from OpenShift to Kubernetes (GKE) on GCP and fixed the defect.","Zero downtime across Dev, UAT and Prod."],
+["A JWT/RSA authentication failure blocked QA releases.","Debugged and refactored the authentication flow.","UAT sign-off restored the same sprint."],
+["Deprecated distributed tracing left 2 microservices hard to observe.","Added correlation-ID logging with Logstash/Kibana parsing.","End-to-end observability for both services."]]},
+{k:"Voltex",t:"Software and Hardware Engineer",m:"Voltex Solutions, Jul – Oct 2025",g:["Database indexing","Bulk upserts","Caching","Data validation"],i:[
+["Real-time dashboards for Alberta power plants took 73 seconds to process.","Added database indexes and switched to bulk upserts.","96% faster: 73s to 3s."],
+["Invalid records were reaching production dashboards.","Built automated validation routines.","Improved data accuracy on high-volume energy datasets."]]},
+{k:"Noralta",t:"Software Developer Intern",m:"Noralta Technologies, Mar – May 2025",g:[".NET","Cassandra","Docker","ADO pipelines","Playwright"],i:[
+["Slow data access.","Built and deployed a .NET REST API for Cassandra.","35% faster data access."],
+["Manual, slow deployments across three environments.","Streamlined YAML CI/CD and automated Docker deployments on ADO.","30% faster deployments, 50% less manual effort."],
+["Thin test coverage.","Added unit, integration and Playwright end-to-end tests.","Test coverage up 90%."]]},
+{k:"Symend",t:"Cloud Engineering Intern",m:"Symend, Sept 2024 – Feb 2025",g:["Datadog","Terraform","Azure","GitHub Actions","CloudTruth"],i:[
+["Unused Datadog organizations were driving up cost.","Audited and retired 10 of them.","$20,000 saved annually."],
+["Hardcoded secrets across environments.","Integrated CloudTruth to manage credentials securely.","100+ credentials secured."],
+["Slow database migrations.","Automated DB cloning and cleanup with GitHub Actions.","40% faster migrations."]]},
+{k:"Bell interns",t:"Backend, Frontend and Wireless interns",m:"Bell Canada and Bell Mobility, 2022 – 2024",g:["RabbitMQ","PostgreSQL","Kubernetes CronJobs","React","Postman","ReadyAPI"],i:[
+["Geospatial data moved by hand.","Built Java microservices on RabbitMQ and PostgreSQL, scheduled with Kubernetes CronJobs.","Reliable, automated recurring data jobs."],
+["Modem reboot simulation was inefficient.","Enhanced core logic in a React/Java application.","30% more efficient."],
+["Integration issues slipped into merges.","Validated components with Postman-driven testing before merge.","20% fewer integration issues."]]}];
+function tabs(listSel,panelSel,data,render){const L=$(listSel),P=$(panelSel);L.innerHTML=data.map((d,i)=>`<button role="tab" id="${listSel.slice(1)}${i}" aria-selected="${i==0}" tabindex="${i==0?0:-1}">${d.k}</button>`).join("");
+const bs=[...L.children];const sel=i=>{bs.forEach((b,j)=>{b.setAttribute("aria-selected",j==i);b.tabIndex=j==i?0:-1});P.setAttribute("aria-labelledby",bs[i].id);P.innerHTML=render(data[i])};
+bs.forEach((b,i)=>{b.onclick=()=>sel(i);b.onkeydown=e=>{const n=e.key=="ArrowRight"?(i+1)%bs.length:e.key=="ArrowLeft"?(i+bs.length-1)%bs.length:null;if(n!==null){sel(n);bs[n].focus()}}});sel(0)}
+const chips=a=>`<div class="chips">${a.map(t=>`<span class="chip">${t}</span>`).join("")}</div>`;
+tabs("#roleTabs","#rolePanel",roles,r=>`<h3>${r.t}</h3><div class="m">${r.m}</div>${chips(r.g)}${r.i.map(x=>`<div class="item"><div><small>Problem</small><p>${x[0]}</p></div><div><small>Solution</small><p>${x[1]}</p></div><div><small>Result</small><p class="r">${x[2]}</p></div></div>`).join("")}`);
+const skills=[
+{k:"Languages",v:["Java","C#","C/C++","Python","TypeScript/JavaScript","SQL","RISC-V Assembly","PHP"]},
+{k:"Backend",v:["Spring Boot",".NET","Node.js","REST/SOAP","RabbitMQ","Redis Streams","Microservices"]},
+{k:"Cloud and DevOps",v:["AWS","GCP","Azure","Docker","Kubernetes (GKE)","Terraform","Ansible","OpenShift","GitLab CI/CD","GitHub Actions","Jenkins"]},
+{k:"Data",v:["PostgreSQL","Cassandra","DynamoDB","MongoDB","MySQL"]},
+{k:"Reliability",v:["Dynatrace","Datadog","ELK (Logstash/Kibana)","ReadyAPI","Playwright","JUnit","Jest","Postman","Selenium"]}];
+tabs("#skillTabs","#skillPanel",skills,s=>chips(s.v));
+
+const fmt=(n,o)=>(o.pre||"")+n.toLocaleString("en-US")+(o.suf||"");
+const still=matchMedia("(prefers-reduced-motion:reduce)").matches;
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;io.unobserve(e.target);const el=e.target,to=+el.dataset.to,o=el.dataset;if(still){el.textContent=fmt(to,o);return}
+const t0=performance.now();(function f(t){const p=Math.min((t-t0)/1200,1);el.textContent=fmt(Math.round(to*(1-Math.pow(1-p,3))),o);if(p<1)requestAnimationFrame(f)})(t0)}),{threshold:.6});
+document.querySelectorAll("[data-to]").forEach(el=>io.observe(el));
+
+document.querySelectorAll("[data-copy]").forEach(b=>b.onclick=async()=>{const t=$("#toast");try{await navigator.clipboard.writeText(b.dataset.copy);t.textContent="Email copied to clipboard."}catch(e){t.textContent="Copy is blocked here. Use 'Open mail app' or select: "+b.dataset.copy}});
+</script>
+</body>
+</html>
