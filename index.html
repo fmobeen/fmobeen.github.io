@@ -1,199 +1,407 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<style>html{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:light}img{max-width:100%}[hidden]{display:none!important}</style>
 <title>Faria Mobeen | Software Engineer</title>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&family=JetBrains+Mono:wght@400;600&display=swap">
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Faria Mobeen is a software engineer in Calgary working on Java microservices, cloud migrations and observability.">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Public+Sans:wght@400;500;600&family=Schibsted+Grotesk:wght@500;600;700&display=swap">
 <style>
-:root{--bg:#0A0F1E;--surf:#111834;--surf2:#161F42;--ink:#E8EEFF;--muted:#8E9ABB;--rule:#232E57;--teal:#2DF5D2;--indigo:#7C89FF;--on:#04121A;
---sans:"Sora","Helvetica Neue",Arial,sans-serif;--mono:"JetBrains Mono",ui-monospace,Menlo,Consolas,monospace;
-box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
-@media (prefers-color-scheme:light){:root:not([data-theme="dark"]){--bg:#F4F6FF;--surf:#FFFFFF;--surf2:#EDF0FF;--ink:#121A3A;--muted:#55628A;--rule:#D5DBF3;--teal:#007F6B;--indigo:#3F4FD8;--on:#FFFFFF}}
-:root[data-theme="light"]{--bg:#F4F6FF;--surf:#FFFFFF;--surf2:#EDF0FF;--ink:#121A3A;--muted:#55628A;--rule:#D5DBF3;--teal:#007F6B;--indigo:#3F4FD8;--on:#FFFFFF}
-html{scroll-behavior:smooth;scroll-padding-top:calc(env(safe-area-inset-top,0px) + 4rem)}
+/* Layout: editorial ledger. A narrow label column on the left, a reading column on the right, hairline rules between entries. Grounded cards for projects, a tan band for honors, a forest band for contact. */
+:root{
+  --canvas:#EFE7E0;   /* lighter off-white derived from the pale neutral */
+  --tan:#D8C6BA;      /* pale neutral: cards, dividers, bands */
+  --paper:#F7F1EB;    /* light text on forest and olive */
+  --ink:#0C0D07;      /* primary text */
+  --muted:#4F4B3F;    /* supporting text, a lightened ink */
+  --forest:#314021;   /* structure, buttons, headers */
+  --olive:#617246;    /* secondary: borders, feature card */
+  --pink:#C09BAC;     /* hover, active, tags, highlights */
+  --rule:#D8C6BA;
+  --rule-dark:#B9A799;
+  --display:"Schibsted Grotesk","Helvetica Neue",Arial,sans-serif;
+  --body:"Public Sans","Helvetica Neue",Arial,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
+}
 *,*::before,*::after{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--ink);font:400 1rem/1.65 var(--sans)}
-a{color:var(--teal)}
-:focus-visible{outline:3px solid var(--teal);outline-offset:3px;border-radius:4px}
-.w{max-width:66rem;margin:0 auto;padding:0 1.5rem}
-h1,h2,h3{font-weight:700;letter-spacing:-.02em;margin:0}
-nav.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--rule)}
-nav.top .w{display:flex;justify-content:space-between;align-items:center;gap:1rem;height:3.5rem}
-nav.top b{font-weight:700}
-nav.top div{display:flex;gap:1.2rem;font-size:.9rem}
-nav.top a{color:var(--muted);text-decoration:none}nav.top a:hover{color:var(--ink)}
-.hero{display:grid;grid-template-columns:1.1fr .9fr;gap:2.5rem;align-items:center;padding:4.5rem 0 3.5rem}
-.hero h1{font-size:clamp(2.2rem,5.4vw,3.8rem);line-height:1.05;margin-bottom:1.2rem}
-.hero h1 em{font-style:normal;background:linear-gradient(90deg,var(--teal),var(--indigo));-webkit-background-clip:text;background-clip:text;color:transparent}
-.hero p{color:var(--muted);max-width:34rem;margin:0 0 1.6rem}
-.badges{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:1.6rem}
-.badges span{border:1px solid var(--rule);background:var(--surf);border-radius:99px;padding:.3rem .8rem;font-size:.82rem}
-.btns{display:flex;gap:.7rem;flex-wrap:wrap}
-.btn{font:600 .95rem var(--sans);padding:.75rem 1.3rem;border-radius:8px;border:1.5px solid var(--teal);color:var(--teal);background:none;text-decoration:none;cursor:pointer}
-.btn.p{background:var(--teal);color:var(--on);box-shadow:0 0 24px color-mix(in srgb,var(--teal) 35%,transparent)}
-.term{background:var(--surf);border:1px solid var(--rule);border-radius:12px;box-shadow:0 0 60px color-mix(in srgb,var(--indigo) 22%,transparent);overflow:hidden;font:400 .84rem/1.7 var(--mono)}
-.term header{display:flex;gap:.4rem;padding:.7rem 1rem;border-bottom:1px solid var(--rule);background:var(--surf2)}
-.term header i{width:.65rem;height:.65rem;border-radius:50%;background:var(--rule)}
-.term pre{margin:0;padding:1rem 1.1rem;white-space:pre-wrap;overflow-wrap:anywhere}
-.term .l{display:block;opacity:0;animation:in .01s forwards;animation-delay:calc(var(--i)*.55s)}
-.term .c{color:var(--teal)}.term .o{color:var(--muted)}.term .g{color:var(--indigo)}
-@keyframes in{to{opacity:1}}
-@media (prefers-reduced-motion:reduce){.term .l{animation:none;opacity:1}html{scroll-behavior:auto}}
-.metrics{border-block:1px solid var(--rule);background:var(--surf)}
-.metrics .w{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;padding-block:2rem}
-.metrics b{display:block;font-size:2.2rem;line-height:1.1;color:var(--teal);font-variant-numeric:tabular-nums}
-.metrics span{color:var(--muted);font-size:.88rem}
-section{padding:4rem 0}
-section h2{font-size:1.9rem;margin-bottom:.4rem}
-section .sub{color:var(--muted);margin:0 0 1.8rem}
-[role=tablist]{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:1.4rem}
-[role=tab]{font:600 .88rem var(--sans);color:var(--muted);background:var(--surf);border:1px solid var(--rule);border-radius:8px;padding:.55rem 1rem;cursor:pointer}
-[role=tab][aria-selected=true]{color:var(--on);background:var(--indigo);border-color:var(--indigo)}
-.panel{background:var(--surf);border:1px solid var(--rule);border-radius:12px;padding:1.5rem}
-.chips{display:flex;flex-wrap:wrap;gap:.5rem}
-.chip{font:400 .82rem var(--mono);background:var(--surf2);border:1px solid var(--rule);border-radius:6px;padding:.3rem .65rem}
-.role h3{font-size:1.25rem}.role .m{color:var(--muted);font-size:.9rem;margin:.2rem 0 1rem}
-.item{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;padding:1rem 0;border-top:1px solid var(--rule)}
-.item small{display:block;color:var(--indigo);font-weight:600;font-size:.8rem;margin-bottom:.15rem}
-.item p{margin:0;font-size:.93rem}.item .r{color:var(--teal);font-weight:600}
-.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem}
-.card{text-align:left;font:inherit;color:inherit;background:var(--surf);border:1px solid var(--rule);border-radius:12px;padding:1.4rem;cursor:pointer;display:flex;flex-direction:column;gap:.8rem;transition:border-color .2s,transform .2s}
-.card:hover{border-color:var(--teal);transform:translateY(-3px)}
-.card h3{font-size:1.1rem}.card ul{margin:0;padding-left:1.1rem;color:var(--muted);font-size:.9rem}
-.card .more{margin-top:auto;color:var(--teal);font-weight:600;font-size:.88rem}
-dialog{background:var(--surf);color:var(--ink);border:1px solid var(--teal);border-radius:14px;max-width:38rem;width:calc(100% - 2rem);padding:1.6rem}
-dialog::backdrop{background:rgba(3,6,18,.72)}
-dialog h3{font-size:1.3rem;margin-bottom:.6rem}dialog p{color:var(--muted);margin:.4rem 0 1rem}
-.flow{display:flex;flex-wrap:wrap;align-items:center;gap:.4rem;margin:.6rem 0 1.2rem}.flow .a{color:var(--teal)}
-.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem}
-.honor{background:var(--surf);border:1px solid var(--rule);border-radius:12px;padding:1.2rem;font-size:.93rem}
-.honor b{display:block;margin-bottom:.2rem}
-footer{padding:4rem 0 5rem;text-align:center;border-top:1px solid var(--rule);background:linear-gradient(180deg,var(--bg),var(--surf))}
-footer h2{font-size:clamp(1.6rem,4vw,2.4rem);max-width:24ch;margin:0 auto 1rem}
-footer .btns{justify-content:center;margin-top:1.4rem}
-#toast{min-height:1.5rem;color:var(--teal);font-size:.9rem;margin-top:.8rem}
-@media (max-width:52rem){.hero{grid-template-columns:1fr;padding-top:2.5rem}.metrics .w{grid-template-columns:repeat(2,1fr)}.cards,.grid4{grid-template-columns:1fr 1fr}.item{grid-template-columns:1fr;gap:.6rem}}
-@media (max-width:36rem){.cards,.grid4{grid-template-columns:1fr}nav.top div a:nth-child(n+3){display:none}}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--canvas);color:var(--ink);font:400 1.0625rem/1.65 var(--body);-webkit-font-smoothing:antialiased}
+h1,h2,h3,p,ul,dl,dd{margin:0}
+ul{padding:0}
+::selection{background:var(--pink);color:var(--ink)}
+
+a{color:inherit;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:.22em;text-decoration-color:var(--olive);border-radius:2px;transition:color .2s ease,background-color .2s ease,text-decoration-color .2s ease}
+a:hover{background-color:var(--pink);color:var(--ink);text-decoration-color:transparent}
+:focus-visible{outline:2px solid var(--forest);outline-offset:3px;border-radius:2px}
+
+.wrap{max-width:70rem;margin-inline:auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+
+/* header */
+.top{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:.5rem 1.75rem;padding-block:1.5rem}
+.brand{font:700 1.05rem/1.3 var(--display);letter-spacing:-.01em;text-decoration:none;color:var(--forest)}
+.brand:hover{color:var(--ink)}
+.nav{display:flex;flex-wrap:wrap;gap:.35rem 1.4rem}
+.nav a{font:500 .92rem/1.5 var(--body);color:var(--muted);text-decoration:none;padding:.05em .3em;margin:-.05em -.3em}
+.nav a:hover{color:var(--ink);background-color:var(--pink)}
+
+/* hero */
+.hero{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:3rem 4.5rem;align-items:end;padding-block:4rem 4.5rem;border-top:1px solid var(--rule)}
+.hero h1{font:700 clamp(2.1rem,5.4vw,3.7rem)/1.06 var(--display);letter-spacing:-.025em;text-wrap:balance;max-width:19ch;margin-bottom:1.4rem}
+.lede{font-size:1.1875rem;line-height:1.6;max-width:34rem;margin-bottom:2rem}
+.cta{display:flex;flex-wrap:wrap;align-items:center;gap:.9rem 1.4rem}
+.btn{display:inline-block;font:600 .95rem/1 var(--body);padding:.85rem 1.25rem;border-radius:4px;border:1px solid var(--forest);color:var(--forest);background:transparent;text-decoration:none;cursor:pointer;transition:background-color .2s ease,color .2s ease,border-color .2s ease}
+.btn:hover{background-color:var(--pink);border-color:var(--pink);color:var(--ink)}
+.btn.primary{background-color:var(--forest);border-color:var(--forest);color:var(--paper)}
+.btn.primary:hover{background-color:var(--pink);border-color:var(--pink);color:var(--ink)}
+.glance{border-top:1px solid var(--rule-dark)}
+.glance div{display:grid;grid-template-columns:6.5rem minmax(0,1fr);gap:1rem;padding-block:.8rem;border-bottom:1px solid var(--rule-dark)}
+.glance dt{font:500 .72rem/1.9 var(--mono);text-transform:uppercase;letter-spacing:.09em;color:var(--forest)}
+.glance dd{font-size:.97rem;line-height:1.55}
+
+/* sections: label column + reading column */
+.sec{border-top:1px solid var(--rule)}
+.cols{display:grid;grid-template-columns:11rem minmax(0,1fr);column-gap:3rem;padding-block:3.5rem}
+.cols>h2{font:700 1.25rem/1.3 var(--display);letter-spacing:-.01em;color:var(--forest)}
+.col{min-width:0;max-width:52rem}
+
+/* results ledger */
+.ledger{list-style:none}
+.ledger li{display:grid;grid-template-columns:11rem minmax(0,1fr);gap:.25rem 1.5rem;align-items:baseline;padding-block:1.15rem;border-top:1px solid var(--rule)}
+.ledger li:first-child{border-top:0;padding-top:0}
+.ledger b{font:700 clamp(1.7rem,3.6vw,2.3rem)/1.1 var(--display);letter-spacing:-.02em;font-variant-numeric:tabular-nums;color:var(--forest)}
+.ledger span{display:block}
+.ledger small{display:block;margin-top:.1rem;color:var(--muted);font-size:.875rem}
+
+/* experience */
+.role{padding-block:1.7rem;border-top:1px solid var(--rule)}
+.role:first-child{border-top:0;padding-top:0}
+.role header{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:.1rem 1.5rem}
+.role h3{font:700 1.2rem/1.3 var(--display);letter-spacing:-.005em}
+.when{font:400 .8125rem/1.6 var(--mono);color:var(--muted);white-space:nowrap}
+.where{margin:.1rem 0 .95rem;color:var(--muted);font-size:.95rem}
+.role ul{max-width:44rem;margin-bottom:.95rem;padding-left:1.15rem}
+.role li{margin-bottom:.5rem;padding-left:.15rem}
+.role li::marker{color:var(--olive)}
+.tags{font:400 .78rem/1.8 var(--mono);color:var(--muted)}
+
+/* projects: one wide olive feature, two smaller tan cards */
+.proj{background:var(--tan);color:var(--ink);border:1px solid var(--olive);border-radius:6px;padding:1.75rem;transition:transform .25s ease,border-color .25s ease}
+.proj:hover{transform:translateY(-2px);border-color:var(--forest)}
+.proj h3{font:700 1.3rem/1.3 var(--display);letter-spacing:-.01em}
+.proj .meta{margin:.25rem 0 .7rem;font:400 .78rem/1.8 var(--mono);color:var(--muted)}
+.proj p{margin-bottom:.9rem}
+.proj ul{padding-left:1.15rem;max-width:44rem}
+.proj li{margin-bottom:.45rem;padding-left:.15rem}
+.proj li::marker{color:var(--olive)}
+.proj .stack{display:flex;flex-wrap:wrap;gap:.4rem;list-style:none;padding-left:0;max-width:none;margin-bottom:1.1rem}
+.proj .stack li{margin:0;padding:.35rem .5rem;border-radius:2px;background:var(--pink);color:var(--ink);font:500 .75rem/1 var(--mono)}
+.feature{background:var(--olive);color:var(--paper);border-color:var(--forest);margin-bottom:1.25rem}
+.feature:hover{border-color:var(--pink)}
+.feature h3{font-size:1.5rem}
+.feature .meta,.feature li::marker{color:var(--paper)}
+.feature :focus-visible{outline-color:var(--paper)}
+.pair{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:1.25rem}
+details{margin-top:1.1rem;padding-top:.85rem;border-top:1px solid var(--forest)}
+summary{display:flex;align-items:center;gap:.55rem;width:fit-content;margin-left:-.5rem;padding:.2rem .5rem;border-radius:2px;cursor:pointer;list-style:none;font:600 .9rem/1.5 var(--body);transition:color .2s ease,background-color .2s ease}
+summary::-webkit-details-marker{display:none}
+summary::before{content:"+";width:1ch;font-family:var(--mono);color:inherit}
+details[open] summary::before{content:"\2013"}
+summary:hover{background-color:var(--pink);color:var(--ink)}
+details p{margin:.7rem 0 0;font:400 .84rem/1.85 var(--mono);color:inherit}
+
+/* skills */
+.skills>div{display:grid;grid-template-columns:9.5rem minmax(0,1fr);gap:.4rem 1.5rem;padding-block:.95rem;border-top:1px solid var(--rule)}
+.skills>div:first-child{border-top:0;padding-top:0}
+.skills dt{font:600 .95rem/1.6 var(--display);color:var(--forest)}
+
+/* education and honors on a tan band */
+.sec.band{background:var(--tan);border-top:0}
+.edu{margin-bottom:1.1rem}
+.edu h3{font:700 1.2rem/1.3 var(--display)}
+.edu p{color:var(--muted);font-size:.95rem}
+.honors{list-style:none}
+.honors li{display:flex;justify-content:space-between;flex-wrap:wrap;gap:.1rem 1.5rem;padding-block:.8rem;border-top:1px solid var(--rule-dark)}
+.honors b{font-weight:600}
+.honors span{color:var(--muted);font-size:.95rem}
+mark{background:var(--pink);color:var(--ink);padding:.05em .3em;border-radius:2px}
+
+/* contact on a forest band */
+.contact{background:var(--forest);color:var(--paper)}
+.contact .wrap{padding-block:4rem 2rem}
+.contact h2{font:700 clamp(1.7rem,4vw,2.6rem)/1.12 var(--display);letter-spacing:-.02em;text-wrap:balance;max-width:20ch;margin-bottom:1rem;color:var(--paper)}
+.contact .lead{max-width:34rem;margin-bottom:1.6rem}
+.contact a{text-decoration-color:var(--pink)}
+.contact a:hover{background-color:var(--pink);color:var(--ink);text-decoration-color:transparent}
+.contact :focus-visible{outline-color:var(--pink)}
+.contact .btn.primary{background-color:var(--paper);border-color:var(--paper);color:var(--forest)}
+.contact .btn.primary:hover{background-color:var(--pink);border-color:var(--pink);color:var(--ink)}
+.copyrow{display:flex;flex-wrap:wrap;align-items:center;gap:.8rem 1.25rem;margin-bottom:.9rem}
+.email{font:500 1.05rem/1.4 var(--mono);overflow-wrap:anywhere}
+.contact .note{min-height:1.5rem;margin:0 0 1.4rem;color:var(--tan);font-size:.9rem}
+.links{display:flex;flex-wrap:wrap;gap:.4rem 1.6rem;font-weight:500}
+.foot{margin-top:3.5rem;padding-top:1.2rem;border-top:1px solid var(--olive);color:var(--tan);font-size:.85rem}
+
+@media (max-width:56rem){
+  .hero{grid-template-columns:minmax(0,1fr);align-items:start;padding-block:2.75rem 3rem}
+  .cols{grid-template-columns:minmax(0,1fr);row-gap:1.4rem;padding-block:2.75rem}
+  .pair{grid-template-columns:minmax(0,1fr)}
+}
+@media (max-width:36rem){
+  .ledger li{grid-template-columns:minmax(0,1fr)}
+  .skills>div{grid-template-columns:minmax(0,1fr);gap:.1rem}
+  .glance div{grid-template-columns:5.5rem minmax(0,1fr)}
+  .role header{display:block}
+  .proj{padding:1.25rem}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{transition:none!important}
+  .proj:hover{transform:none}
+}
 </style>
 </head>
 <body>
-<nav class="top"><div class="w"><b>Faria Mobeen</b><div><a href="#projects">Projects</a><a href="#experience">Experience</a><a href="#skills">Skills</a><a href="#contact">Contact</a></div></div></nav>
-
-<main>
-<div class="w hero" id="top">
-  <div>
-    <div class="badges"><span>🏆 Gold Medalist Capstone</span><span>⚡ 96% Performance Boost</span><span>☁️ Cloud &amp; Microservices</span></div>
-    <h1>Backend and cloud engineer who <em>ships zero-downtime migrations</em> and faster systems.</h1>
-    <p>Junior Software Engineer at Bell. I build with Java/Spring Boot, .NET and React on AWS and GCP, and automate the DevOps pipelines around them.</p>
-    <div class="btns"><a class="btn p" href="#projects">View Projects</a><a class="btn" href="#contact">Contact Me</a></div>
+<header>
+  <div class="wrap">
+    <div class="top">
+      <a class="brand" href="#top">Faria Mobeen</a>
+      <nav class="nav" aria-label="Sections">
+        <a href="#results">Results</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
   </div>
-  <div class="term" aria-label="Terminal showing three results from my work">
-    <header><i></i><i></i><i></i></header>
-    <pre><span class="l" style="--i:0"><span class="c">$</span> deploy --strategy zero-downtime</span><span class="l o" style="--i:1">  openshift to gke: dev, uat, prod ok</span><span class="l" style="--i:2"><span class="c">$</span> profile voltex.dashboard</span><span class="l g" style="--i:3">  query time 73s to 3s  (-96%)</span><span class="l" style="--i:4"><span class="c">$</span> audit datadog --unused</span><span class="l g" style="--i:5">  retired 10 orgs, saved $20,000/yr</span><span class="l" style="--i:6"><span class="c">$</span> _</span></pre>
-  </div>
-</div>
+</header>
 
-<div class="metrics"><div class="w">
-  <div><b data-to="96" data-suf="%">96%</b><span>Drop in processing time, Voltex Solutions</span></div>
-  <div><b data-to="20000" data-pre="$">$20,000</b><span>Saved annually on monitoring, Symend</span></div>
-  <div><b data-to="18" data-suf="K/day">18K/day</b><span>Unauthorized legacy traffic eliminated with zero downtime, Bell</span></div>
-  <div><b data-to="97" data-pre="$">$97</b><span>Working prototype, undercutting $1,000 competitors</span></div>
-</div></div>
+<main id="top">
+  <section class="wrap hero" aria-labelledby="headline">
+    <div>
+      <h1 id="headline">Backend and cloud engineer who ships zero-downtime migrations and faster systems.</h1>
+      <p class="lede">Junior Software Engineer at Bell in Calgary. I build Java and Spring Boot services, .NET and React applications, and the AWS, GCP and DevOps pipelines that carry them to production.</p>
+      <div class="cta">
+        <a class="btn primary" href="#projects">View projects</a>
+        <a href="#contact">Contact me</a>
+      </div>
+    </div>
+    <dl class="glance">
+      <div><dt>Role</dt><dd>Junior Software Engineer, Bell</dd></div>
+      <div><dt>Based</dt><dd>Calgary, AB</dd></div>
+      <div><dt>Studied</dt><dd>B.Sc. Software Engineering, University of Calgary</dd></div>
+      <div><dt>Honors</dt><dd>Gold Medal, Software Engineering Capstone. Rhodes Scholarship nominee.</dd></div>
+    </dl>
+  </section>
 
-<section id="projects"><div class="w">
-  <h2>Featured projects</h2><p class="sub">Select a project to see how it fits together.</p>
-  <div class="cards" id="cards"></div>
-</div></section>
+  <section class="sec" id="results" aria-labelledby="results-h">
+    <div class="wrap cols">
+      <h2 id="results-h">Selected results</h2>
+      <div class="col">
+        <ul class="ledger">
+          <li><b>96%</b><span>Drop in processing time for power plant monitoring dashboards, from 73 seconds to 3<small>Voltex Solutions</small></span></li>
+          <li><b>$20,000</b><span>Saved each year in monitoring costs by retiring unused tooling<small>Symend</small></span></li>
+          <li><b>18K/day</b><span>Unauthorized legacy API requests eliminated, with zero downtime<small>Bell</small></span></li>
+          <li><b>$97</b><span>Working prototype built under a $3,000 budget, against $1,000 competitor products<small>Capstone project, Gold Medal</small></span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
 
-<section id="experience" style="background:var(--surf)"><div class="w">
-  <h2>Experience</h2><p class="sub">Each result, framed as problem, solution and measurable outcome.</p>
-  <div role="tablist" aria-label="Roles" id="roleTabs"></div>
-  <div class="panel role" id="rolePanel" role="tabpanel" tabindex="0"></div>
-</div></section>
+  <section class="sec" id="experience" aria-labelledby="experience-h">
+    <div class="wrap cols">
+      <h2 id="experience-h">Experience</h2>
+      <div class="col">
+        <article class="role">
+          <header><h3>Junior Software Engineer</h3><span class="when">Oct 2025 – Present</span></header>
+          <p class="where">Bell, Calgary, AB</p>
+          <ul>
+            <li>Eliminated 18K/day of unauthorized legacy API traffic by tracing requests in Dynatrace across 3 production servers and retiring the exposed credential, with zero downtime.</li>
+            <li>Migrated Java microservices from OpenShift to Kubernetes (GKE) on GCP across Dev, UAT and Prod with zero downtime, and resolved a network-whitelisting defect that was blocking a third-party REST API.</li>
+            <li>Restored UAT sign-off within the same sprint by debugging and refactoring a JWT/RSA authentication failure that was blocking QA releases.</li>
+            <li>Built end-to-end observability for 2 microservices with correlation-ID logging and Logstash/Kibana, replacing deprecated distributed tracing.</li>
+            <li>Reached 100% response parity between legacy SOAP and modernized REST services by isolating a routing-SDK configuration gap.</li>
+          </ul>
+          <p class="tags">Dynatrace · GKE · OpenShift · Docker · GitLab CI/CD · Spring Boot · ELK</p>
+        </article>
 
-<section id="skills"><div class="w">
-  <h2>Skills</h2><p class="sub">Grouped by the kind of work they do.</p>
-  <div role="tablist" aria-label="Skill groups" id="skillTabs"></div>
-  <div class="panel" id="skillPanel" role="tabpanel" tabindex="0"></div>
-</div></section>
+        <article class="role">
+          <header><h3>Software and Hardware Engineer</h3><span class="when">Jul 2025 – Oct 2025</span></header>
+          <p class="where">Voltex Solutions, Calgary, AB</p>
+          <ul>
+            <li>Cut real-time monitoring processing time by 96% (73s to 3s) for Alberta power plant dashboards serving top energy providers, with database indexes and bulk upserts.</li>
+            <li>Improved data accuracy on high-volume energy datasets by building automated validation routines that removed invalid records before they reached production dashboards.</li>
+          </ul>
+          <p class="tags">Database indexing · Bulk upserts · Caching · Data validation</p>
+        </article>
 
-<section style="background:var(--surf)"><div class="w">
-  <h2>Honors and education</h2><p class="sub">&nbsp;</p>
-  <div class="grid4">
-    <div class="honor"><b>Gold Medal</b>Software Engineering Capstone</div>
-    <div class="honor"><b>Rhodes Scholarship nominee</b>Also a Scholars Academy nominee</div>
-    <div class="honor"><b>Hackathon Award</b>Best Use of APIs/Datasets. Dean's List and Jason Lang Scholarship.</div>
-    <div class="honor"><b>B.Sc. Software Engineering</b>University of Calgary</div>
-  </div>
-</div></section>
+        <article class="role">
+          <header><h3>Software Developer Intern</h3><span class="when">Mar 2025 – May 2025</span></header>
+          <p class="where">Noralta Technologies, Calgary, AB</p>
+          <ul>
+            <li>Improved data access speed by 35% by building and deploying a .NET REST API for Cassandra.</li>
+            <li>Cut deployment time by 30% across three environments and reduced manual deployment effort by 50% with YAML CI/CD pipelines and Docker automation on ADO.</li>
+            <li>Increased test coverage by 90% with unit, integration and Playwright end-to-end tests.</li>
+            <li>Kept delivery 100% on time as product owner and sprint lead.</li>
+          </ul>
+          <p class="tags">.NET · Cassandra · Docker · ADO pipelines · Playwright</p>
+        </article>
+
+        <article class="role">
+          <header><h3>Cloud Engineering Intern</h3><span class="when">Sept 2024 – Feb 2025</span></header>
+          <p class="where">Symend, Calgary, AB</p>
+          <ul>
+            <li>Saved $20,000 a year in monitoring costs by auditing and retiring 10 unused Datadog organizations.</li>
+            <li>Reduced database migration time by 40% by automating DB cloning and cleanup with GitHub Actions.</li>
+            <li>Eliminated hardcoded secrets by moving 100+ credentials into CloudTruth, and cut release validation time by 30% with a Datadog reliability dashboard.</li>
+          </ul>
+          <p class="tags">Datadog · Terraform · Azure · GitHub Actions · CloudTruth · Redis Streams</p>
+        </article>
+
+        <article class="role">
+          <header><h3>Backend, Frontend and Wireless Intern</h3><span class="when">2022 – 2024</span></header>
+          <p class="where">Bell Canada and Bell Mobility, Calgary, AB</p>
+          <ul>
+            <li>Built Java microservices on RabbitMQ and PostgreSQL that replaced manual geospatial data transfers, scheduled with Kubernetes CronJobs.</li>
+            <li>Boosted modem reboot simulation efficiency by 30% in a React/Java web application, and cut integration issues by 20% with Postman-driven testing.</li>
+            <li>Automated manual Excel reporting with VBA macros while resolving cell tower alarms with field technicians.</li>
+          </ul>
+          <p class="tags">RabbitMQ · PostgreSQL · Kubernetes CronJobs · React · Postman · ReadyAPI</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="projects" aria-labelledby="projects-h">
+    <div class="wrap cols">
+      <h2 id="projects-h">Projects</h2>
+      <div class="col">
+        <article class="proj feature">
+          <h3>Smart Hydroponic System</h3>
+          <p class="meta">Gold Medal, 2025 Engineering Design Fair · Sept 2024 – Apr 2025</p>
+          <ul class="stack"><li>React Native</li><li>AWS</li><li>IoT</li><li>GraphQL</li></ul>
+          <p>A custom PCB, a React Native app and an AWS backend for real-time monitoring and control of a hydroponic system.</p>
+          <ul>
+            <li>Enabled real-time device control with AWS AppSync (GraphQL), DynamoDB, Lambda and IoT Core.</li>
+            <li>Reached millisecond-level actuator response with under 5% packet loss by streaming live sensor data over MQTT.</li>
+            <li>Delivered a $97 working prototype under a $3,000 budget, undercutting $1,000 competitor products.</li>
+          </ul>
+          <details>
+            <summary>Components</summary>
+            <p>Custom PCB · MQTT · AWS IoT Core · Lambda · AppSync (GraphQL) · DynamoDB · React Native app</p>
+          </details>
+        </article>
+
+        <div class="pair">
+          <article class="proj">
+            <h3>EventBlitz</h3>
+            <p class="meta">March 2024</p>
+            <ul class="stack"><li>Java</li><li>Spring Boot</li><li>ReactJS</li><li>Cloud SQL</li><li>JUnit</li><li>Jest</li></ul>
+            <p>An event management web app, led end to end.</p>
+            <ul>
+              <li>Reached 95% implementation accuracy with a design document aligned to MVC and microservices architecture.</li>
+              <li>Reached 90% test coverage by applying test-driven development with JUnit and Jest.</li>
+            </ul>
+          </article>
+
+          <article class="proj">
+            <h3>AI Story Generator</h3>
+            <p class="meta">April 2023</p>
+            <ul class="stack"><li>ReactJS</li><li>AWS Lambda</li><li>OpenAI</li><li>DynamoDB</li><li>Terraform</li><li>Python</li></ul>
+            <p>A web app that turns user input into prompts for the OpenAI API.</p>
+            <ul>
+              <li>Reduced response time by 30% with an AWS Lambda backend.</li>
+              <li>Cut deployment time by 25% by provisioning the backend with Terraform.</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="skills" aria-labelledby="skills-h">
+    <div class="wrap cols">
+      <h2 id="skills-h">Skills</h2>
+      <div class="col">
+        <dl class="skills">
+          <div><dt>Languages</dt><dd>Java, C/C++, C#, Python, SQL, JavaScript/TypeScript, RISC-V Assembly, HTML/CSS, PHP</dd></div>
+          <div><dt>Backend</dt><dd>Spring Boot, .NET, Node.js, REST and SOAP APIs, RabbitMQ, Redis Streams, microservices architecture</dd></div>
+          <div><dt>Frontend</dt><dd>React, React Native, Bootstrap, TailwindCSS, Material-UI</dd></div>
+          <div><dt>Cloud and DevOps</dt><dd>AWS, GCP, Azure, Docker, Kubernetes (GKE), Terraform, Ansible, OpenShift, Jenkins, GitLab CI/CD, GitHub Actions</dd></div>
+          <div><dt>Data</dt><dd>PostgreSQL, Cassandra, DynamoDB, MongoDB, MySQL</dd></div>
+          <div><dt>Reliability and testing</dt><dd>Dynatrace, Datadog, ELK (Logstash/Kibana), ReadyAPI, Playwright, JUnit, Jest, Selenium, Postman, TDD</dd></div>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec band" id="education" aria-labelledby="education-h">
+    <div class="wrap cols">
+      <h2 id="education-h">Education and honors</h2>
+      <div class="col">
+        <div class="edu">
+          <h3>B.Sc. Software Engineering</h3>
+          <p>University of Calgary, Calgary, AB</p>
+        </div>
+        <ul class="honors">
+          <li><b><mark>Gold Medal</mark></b><span>Software Engineering Capstone</span></li>
+          <li><b>Rhodes Scholarship</b><span>Nominee</span></li>
+          <li><b>Scholars Academy</b><span>Nominee</span></li>
+          <li><b>Hackathon Award</b><span>Best Use of APIs/Datasets</span></li>
+          <li><b>Dean's List</b><span>Academic honor</span></li>
+          <li><b>Jason Lang Scholarship</b><span>Scholarship</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
 </main>
 
-<footer id="contact"><div class="w">
-  <h2>Let's build scalable, reliable software together.</h2>
-  <div class="btns">
-    <button class="btn p" data-copy="fariamobeen124@gmail.com">Copy email</button>
-    <a class="btn" href="mailto:fariamobeen124@gmail.com">Open mail app</a>
-    <a class="btn" href="https://linkedin.com/in/faria-mobeen" rel="noopener">LinkedIn</a>
-    <a class="btn" href="https://github.com/FariaMobeen" rel="noopener">GitHub</a>
+<footer class="contact" id="contact">
+  <div class="wrap">
+    <h2>Let's build scalable, reliable software together.</h2>
+    <p class="lead">The quickest way to reach me is email.</p>
+    <div class="copyrow">
+      <span class="email" id="emailText">fariamobeen124@gmail.com</span>
+      <button class="btn primary" id="copyBtn" type="button">Copy email</button>
+    </div>
+    <p class="note" id="copyNote" role="status" aria-live="polite"></p>
+    <div class="links">
+      <a href="https://linkedin.com/in/faria-mobeen" rel="noopener">LinkedIn</a>
+      <a href="https://github.com/FariaMobeen" rel="noopener">GitHub</a>
+      <a href="mailto:fariamobeen124@gmail.com">Open mail app</a>
+    </div>
+    <div class="foot">Faria Mobeen · Calgary, AB</div>
   </div>
-  <div id="toast" role="status"></div>
-</div></footer>
-
-<dialog id="dlg" aria-labelledby="dt"><h3 id="dt"></h3><p id="dp"></p><div class="flow" id="df"></div><div class="chips" id="dc"></div><div class="btns" style="margin-top:1.4rem"><button class="btn" id="dx">Close</button></div></dialog>
+</footer>
 
 <script>
-const $=s=>document.querySelector(s);
-const projects=[
-{n:"Smart Hydroponic System",t:["React Native","AWS IoT","GraphQL"],h:["Gold Medal at the 2025 Engineering Design Fair","$97 prototype against a $3,000 budget","Millisecond actuator response over MQTT, under 5% packet loss"],p:"Custom PCB, React Native app and AWS backend for real-time monitoring and device control. It undercut $1,000 competitor products.",f:["Custom PCB","MQTT","AWS IoT Core","Lambda","AppSync (GraphQL)","DynamoDB","React Native app"]},
-{n:"AI Story Generator",t:["React","AWS Lambda","Terraform","OpenAI"],h:["30% faster response time","User input routed as prompts to the OpenAI API","25% faster deployment via Terraform"],p:"A story-generation web app that turns user input into prompts for the OpenAI API, with the backend provisioned as code.",f:["ReactJS","AWS Lambda","OpenAI API","DynamoDB","Terraform"]},
-{n:"EventBlitz",t:["Java","Spring Boot","React","Cloud SQL"],h:["Led full-stack development end to end","MVC and microservices design, 95% implementation accuracy","90% test coverage with TDD"],p:"An event management web app designed around MVC and microservices, built test-first with JUnit and Jest.",f:["ReactJS","Spring Boot (Java)","Google Cloud SQL","JUnit + Jest tests"]}];
-$("#cards").innerHTML=projects.map((x,i)=>`<button class="card" data-i="${i}"><h3>${x.n}</h3><div class="chips">${x.t.map(t=>`<span class="chip">${t}</span>`).join("")}</div><ul>${x.h.map(h=>`<li>${h}</li>`).join("")}</ul><span class="more">View architecture</span></button>`).join("");
-document.querySelectorAll(".card").forEach(b=>b.onclick=()=>{const x=projects[b.dataset.i];$("#dt").textContent=x.n;$("#dp").textContent=x.p;$("#df").innerHTML=x.f.map(s=>`<span class="chip">${s}</span>`).join('<span class="a">&gt;</span>');$("#dc").innerHTML=x.t.map(t=>`<span class="chip">${t}</span>`).join("");$("#dlg").showModal()});
-$("#dx").onclick=()=>$("#dlg").close();
-$("#dlg").addEventListener("click",e=>{if(e.target.id==="dlg")e.target.close()});
-
-const roles=[
-{k:"Bell",t:"Junior Software Engineer",m:"Bell, Oct 2025 – Present",g:["Dynatrace","GKE","OpenShift","Docker","GitLab CI/CD","Java Spring","ELK"],i:[
-["Unauthorized legacy API traffic hitting production.","Traced requests in Dynatrace across 3 servers and decommissioned the exposed credential.","18K/day eliminated, zero downtime."],
-["A network-whitelisting defect blocked a third-party REST API during a cloud move.","Migrated Java microservices from OpenShift to Kubernetes (GKE) on GCP and fixed the defect.","Zero downtime across Dev, UAT and Prod."],
-["A JWT/RSA authentication failure blocked QA releases.","Debugged and refactored the authentication flow.","UAT sign-off restored the same sprint."],
-["Deprecated distributed tracing left 2 microservices hard to observe.","Added correlation-ID logging with Logstash/Kibana parsing.","End-to-end observability for both services."]]},
-{k:"Voltex",t:"Software and Hardware Engineer",m:"Voltex Solutions, Jul – Oct 2025",g:["Database indexing","Bulk upserts","Caching","Data validation"],i:[
-["Real-time dashboards for Alberta power plants took 73 seconds to process.","Added database indexes and switched to bulk upserts.","96% faster: 73s to 3s."],
-["Invalid records were reaching production dashboards.","Built automated validation routines.","Improved data accuracy on high-volume energy datasets."]]},
-{k:"Noralta",t:"Software Developer Intern",m:"Noralta Technologies, Mar – May 2025",g:[".NET","Cassandra","Docker","ADO pipelines","Playwright"],i:[
-["Slow data access.","Built and deployed a .NET REST API for Cassandra.","35% faster data access."],
-["Manual, slow deployments across three environments.","Streamlined YAML CI/CD and automated Docker deployments on ADO.","30% faster deployments, 50% less manual effort."],
-["Thin test coverage.","Added unit, integration and Playwright end-to-end tests.","Test coverage up 90%."]]},
-{k:"Symend",t:"Cloud Engineering Intern",m:"Symend, Sept 2024 – Feb 2025",g:["Datadog","Terraform","Azure","GitHub Actions","CloudTruth"],i:[
-["Unused Datadog organizations were driving up cost.","Audited and retired 10 of them.","$20,000 saved annually."],
-["Hardcoded secrets across environments.","Integrated CloudTruth to manage credentials securely.","100+ credentials secured."],
-["Slow database migrations.","Automated DB cloning and cleanup with GitHub Actions.","40% faster migrations."]]},
-{k:"Bell interns",t:"Backend, Frontend and Wireless interns",m:"Bell Canada and Bell Mobility, 2022 – 2024",g:["RabbitMQ","PostgreSQL","Kubernetes CronJobs","React","Postman","ReadyAPI"],i:[
-["Geospatial data moved by hand.","Built Java microservices on RabbitMQ and PostgreSQL, scheduled with Kubernetes CronJobs.","Reliable, automated recurring data jobs."],
-["Modem reboot simulation was inefficient.","Enhanced core logic in a React/Java application.","30% more efficient."],
-["Integration issues slipped into merges.","Validated components with Postman-driven testing before merge.","20% fewer integration issues."]]}];
-function tabs(listSel,panelSel,data,render){const L=$(listSel),P=$(panelSel);L.innerHTML=data.map((d,i)=>`<button role="tab" id="${listSel.slice(1)}${i}" aria-selected="${i==0}" tabindex="${i==0?0:-1}">${d.k}</button>`).join("");
-const bs=[...L.children];const sel=i=>{bs.forEach((b,j)=>{b.setAttribute("aria-selected",j==i);b.tabIndex=j==i?0:-1});P.setAttribute("aria-labelledby",bs[i].id);P.innerHTML=render(data[i])};
-bs.forEach((b,i)=>{b.onclick=()=>sel(i);b.onkeydown=e=>{const n=e.key=="ArrowRight"?(i+1)%bs.length:e.key=="ArrowLeft"?(i+bs.length-1)%bs.length:null;if(n!==null){sel(n);bs[n].focus()}}});sel(0)}
-const chips=a=>`<div class="chips">${a.map(t=>`<span class="chip">${t}</span>`).join("")}</div>`;
-tabs("#roleTabs","#rolePanel",roles,r=>`<h3>${r.t}</h3><div class="m">${r.m}</div>${chips(r.g)}${r.i.map(x=>`<div class="item"><div><small>Problem</small><p>${x[0]}</p></div><div><small>Solution</small><p>${x[1]}</p></div><div><small>Result</small><p class="r">${x[2]}</p></div></div>`).join("")}`);
-const skills=[
-{k:"Languages",v:["Java","C#","C/C++","Python","TypeScript/JavaScript","SQL","RISC-V Assembly","PHP"]},
-{k:"Backend",v:["Spring Boot",".NET","Node.js","REST/SOAP","RabbitMQ","Redis Streams","Microservices"]},
-{k:"Cloud and DevOps",v:["AWS","GCP","Azure","Docker","Kubernetes (GKE)","Terraform","Ansible","OpenShift","GitLab CI/CD","GitHub Actions","Jenkins"]},
-{k:"Data",v:["PostgreSQL","Cassandra","DynamoDB","MongoDB","MySQL"]},
-{k:"Reliability",v:["Dynatrace","Datadog","ELK (Logstash/Kibana)","ReadyAPI","Playwright","JUnit","Jest","Postman","Selenium"]}];
-tabs("#skillTabs","#skillPanel",skills,s=>chips(s.v));
-
-const fmt=(n,o)=>(o.pre||"")+n.toLocaleString("en-US")+(o.suf||"");
-const still=matchMedia("(prefers-reduced-motion:reduce)").matches;
-const io=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;io.unobserve(e.target);const el=e.target,to=+el.dataset.to,o=el.dataset;if(still){el.textContent=fmt(to,o);return}
-const t0=performance.now();(function f(t){const p=Math.min((t-t0)/1200,1);el.textContent=fmt(Math.round(to*(1-Math.pow(1-p,3))),o);if(p<1)requestAnimationFrame(f)})(t0)}),{threshold:.6});
-document.querySelectorAll("[data-to]").forEach(el=>io.observe(el));
-
-document.querySelectorAll("[data-copy]").forEach(b=>b.onclick=async()=>{const t=$("#toast");try{await navigator.clipboard.writeText(b.dataset.copy);t.textContent="Email copied to clipboard."}catch(e){t.textContent="Copy is blocked here. Use 'Open mail app' or select: "+b.dataset.copy}});
+(function () {
+  var btn = document.getElementById("copyBtn");
+  var note = document.getElementById("copyNote");
+  var txt = document.getElementById("emailText");
+  function selectText() {
+    var range = document.createRange();
+    range.selectNodeContents(txt);
+    var sel = window.getSelection();
+    sel.removeAllRanges();
+    sel.addRange(range);
+  }
+  function blocked() {
+    selectText();
+    note.textContent = "Copying was blocked here. The address is selected, press Ctrl or Cmd+C.";
+  }
+  btn.addEventListener("click", function () {
+    try {
+      navigator.clipboard.writeText(txt.textContent.trim()).then(function () {
+        note.textContent = "Email address copied.";
+      }, blocked);
+    } catch (e) {
+      blocked();
+    }
+  });
+})();
 </script>
 </body>
 </html>
